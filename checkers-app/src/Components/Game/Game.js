@@ -13,7 +13,7 @@ class Game extends React.Component {
     return (
       <div class="container">
           <div class="row Header">
-              <div class="col-sm-12">Header</div>
+              <div class="col-sm-12"><h1>CHECCKKKKERRZZZZ</h1></div>
           </div>
           <div class="row">
               <div class="col-sm-8">

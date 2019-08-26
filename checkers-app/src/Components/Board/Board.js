@@ -1,28 +1,37 @@
 import React from 'react'
 import './chess-board.css'
-import Square from '../Board/Square'
+import SquareRenderer from './SquareRenderer'
+import Pieces from '../Board/Pieces'
+import Square from './Square';
 
 class Board extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            squares: Array(64).fill().map(u=>({row: 0, col: 0, value:'x',isGreyed:false})),
+            squares: Array(64).fill().map(u=>(new Square())),
             whiteIsNext: false,
         }
         let squares = this.state.squares.slice();
         let rowCount = -1;
         for(let i = 0; i < 64; i++){   
-            squares[i].value = i;
             squares[i].row = i % 8 == 0 ? ++rowCount : rowCount;
             squares[i].col = i % 8
-            squares[i].isGreyed = (squares[i].row + squares[i].col) % 2 == 0;
+            squares[i].isShaded = (squares[i].row + squares[i].col) % 2 != 0;
+            // Determine Pieces
+            if (squares[i].isShaded && squares[i].row >=6){
+                squares[i].piece = Pieces.CHECKERS_BLACK;
+            }else if(squares[i].isShaded && squares[i].row <= 1){
+                squares[i].piece = Pieces.CHECKERS_WHITE;
+            }else{
+                squares[i].piece = Pieces.EMPTY;
+            }
         }
         this.setState({squares: squares});
     }
 
 
     renderSquare(i){
-        return(<Square value={this.state.squares[i]}/>);
+        return(<SquareRenderer square={this.state.squares[i]}/>);
     }
 
     generateBoard(){
