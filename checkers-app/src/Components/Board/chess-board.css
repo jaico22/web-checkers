@@ -1,35 +1,73 @@
 .chess-board-square{
     width: 12.6%;
-    border: 1px solid #999999;
+    border: 0px solid #007200;
     height: 12.6%;
-    text-align: center;
     margin-right: -1px;
     margin-left: -1px;
+    margin-right: -1px;
+    padding: 0%;
     float:left;
+    text-align: left;
+    word-wrap: break-word;
+    position: relative;
+    overflow: hidden;
+    color: #00ff00;
+    z-index: 1;
+}
+
+.chess-board-square-text{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
 }
 
 .checker{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    position: absolute;
+    top: -0%;                     /* minus half the div size */
+    left: -0%;                    /* minus half the div size */
+    width: 100%;                   /* the div size */
+    height: 100%;                  /* the div size */
+    border-radius: 100%;           /* the div size */
+    pointer-events: none;           /* send mouse events beneath this layer */
+    z-index: 100;
+}
+
+#white-selected.checker{
+    background: #000000;
+    overflow: hidden;
+    color: rgb(113, 255, 255);
+    z-index: 10;
 }
 
 #white.checker{
-    border: 1px solid #000000;
-    background: #ffffff;
+    background: #000000;
+    overflow: hidden;
+    color: rgb(0, 153, 153);
+    z-index: 10;
 }
 
 #black.checker{
     border: 1px solid #000000;
+    color: #b60000;
+    overflow: hidden;
+    background: #000000;
+}
+#black-selected.checker{
+    border: 1px solid #000000;
+    color: #ff0000;
+    overflow: hidden;
     background: #000000;
 }
 
 #white.chess-board-square{
-    background-color: #ffffff;
+    background-color: #000000;
+    color: #00ff00;
 }
 
 #grey.chess-board-square{
-    background-color: #c7c7c7;
+    background-color: #000000;
+    color: #11ff1167;
 }
 
 

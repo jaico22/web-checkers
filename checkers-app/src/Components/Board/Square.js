@@ -3,6 +3,8 @@ class Square {
         this.row = 0;
         this.col = 0;
         this.piece = null;
+        this.selected = false;
+        this.isKing = false;
         this.isShaded = false;
     }
 }
