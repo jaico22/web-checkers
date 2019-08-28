@@ -25,8 +25,8 @@ class ScoreBoard extends React.Component{
             </div>
             <br /><br /><br /><br /><br />
             <h4>
-            # Red Chips : {this.props.numberRedChips}<br></br>
-            # Blue Chips : {this.props.numberBlueChips}
+                # Red Chips : {this.props.numberRedChips}<br></br>
+                # Blue Chips : {this.props.numberBlueChips}
             </h4>
             </div>
         )

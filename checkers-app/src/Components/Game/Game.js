@@ -3,6 +3,7 @@ import './Game.css';
 import Board from '../Board/Board';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
 import Header from '../Header/Header'
+import Overlay from '../Overlay/Overlay'
 
 class Game extends React.Component {
   constructor(props){
@@ -25,22 +26,25 @@ class Game extends React.Component {
   }
 
   render(){
-    return (
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <Header gameState={this.state} />
-          </div>
-          </div>
+      return (
+      <div>
+        <Overlay gameState={this.state} />
+        <div class="container">
           <div class="row">
-            <div class="col-sm-8">
-              <Board gameCommunication={this.state}/>
+            <div class="col-sm-12">
+              <Header gameState={this.state} />
             </div>
-            <div class="col-sm-4">
-              <ScoreBoard turnIndicatorText={this.state.turnIndicatorText} 
-                transition={this.state.transition}
-                numberRedChips={this.state.numberRedChips}
-                numberBlueChips={this.state.numberBlueChips}/>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <Board gameCommunication={this.state}/>
+              </div>
+              <div class="col-sm-4">
+                <ScoreBoard turnIndicatorText={this.state.turnIndicatorText} 
+                  transition={this.state.transition}
+                  numberRedChips={this.state.numberRedChips}
+                  numberBlueChips={this.state.numberBlueChips}/>
+            </div>
           </div>
         </div>
       </div>

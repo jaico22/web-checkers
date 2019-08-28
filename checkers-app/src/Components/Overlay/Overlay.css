@@ -1,0 +1,19 @@
+
+.overlay-container{
+    margin: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 10;
+    position: fixed;
+    background-color: #000000d2;
+  }
+  
+  .overlay-text{
+    position: relative;
+    width: 100%;
+    top: 35%;
+    font-size: 80px;
+  }
